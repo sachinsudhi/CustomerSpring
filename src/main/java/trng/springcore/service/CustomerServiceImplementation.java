@@ -3,15 +3,22 @@ package trng.springcore.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
 import trng.springcore.pojo.Customer;
 import trng.springcore.bean.ReportBean;
 import trng.springcore.dao.CustomerDao;
 import trng.springcore.dao.CustomerDaoImplementation;
 
+
+@Service
 public class CustomerServiceImplementation implements CustomerService {
+	@Autowired
 	CustomerDao cdao;
 	public CustomerServiceImplementation() {
-		cdao= new CustomerDaoImplementation();
+		//cdao= new CustomerDaoImplementation();
 	}
 
 	@Override

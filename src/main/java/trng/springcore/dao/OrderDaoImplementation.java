@@ -7,10 +7,13 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import trng.springcore.pojo.Orders;
 import trng.springcore.utils.HibernateUtils;
 
+
+@Repository
 public class OrderDaoImplementation implements OrderDao{
 	SessionFactory sf;
 	final static Logger logger = Logger.getLogger(CustomerDaoImplementation.class);

@@ -3,7 +3,10 @@ package trng.springcore.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-  
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class HibernateUtils {
   
     private static final SessionFactory sessionFactory = buildSessionFactory();

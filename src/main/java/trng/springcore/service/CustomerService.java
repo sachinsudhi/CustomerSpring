@@ -15,11 +15,10 @@ public interface CustomerService {
 
 	Customer loadCustomer(int customerId);
 
-	List<Customer> getCustomers(String zipCode); // get all customers who's in the zip code. (User Query API)
+	List<Customer> getCustomers(String zipCode); 
 
-	Map<String, Double> getMonthlySales(int year);// get monthly sales in the given year.
+	Map<String, Double> getMonthlySales(int year);
 
-	List<ReportBean> getReport(int month);// get the report informaton (CustomerId, CustomerName, Total Order Price)
-											// order by Total Order Price desc.
+	List<ReportBean> getReport(int month);
 
 }

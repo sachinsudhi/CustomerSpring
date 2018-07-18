@@ -15,12 +15,12 @@ public class ReportBean implements Serializable {
 	String firstName;
 	int quantity;
 	double price;
+	double sales;
 	public ReportBean(int customerID, String firstName, int quantity, double price) {
 		super();
 		this.customerID = customerID;
 		this.firstName = firstName;
-		this.quantity = quantity;
-		this.price = price;
+		this.sales=quantity*price;
 	}
 	
 	

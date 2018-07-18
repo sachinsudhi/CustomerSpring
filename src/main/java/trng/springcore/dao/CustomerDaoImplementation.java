@@ -10,11 +10,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.transform.Transformers;
+import org.springframework.stereotype.Repository;
 
 import trng.springcore.utils.HibernateUtils;
 import trng.springcore.pojo.Customer;
 import trng.springcore.bean.ReportBean;
 
+
+@Repository
 public class CustomerDaoImplementation implements CustomerDao {
 	SessionFactory sf;
 	final static Logger logger = Logger.getLogger(CustomerDaoImplementation.class);

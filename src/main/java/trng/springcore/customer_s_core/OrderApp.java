@@ -4,22 +4,23 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import trng.springcore.pojo.Customer;
 import trng.springcore.pojo.Orders;
 import trng.springcore.service.CustomerService;
-import trng.springcore.service.CustomerServiceImplementation;
 import trng.springcore.service.OrderService;
-import trng.springcore.service.OrderServiceImplementation;
 import trng.springcore.utils.HibernateUtils;
 
 public class OrderApp {
-	OrderService oserv;
-	CustomerService cserv;
+	
+	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(trng.springcore.config.AppConfig.class);
+	OrderService oserv = applicationContext.getBean(OrderService.class);
+	CustomerService cserv = applicationContext.getBean(CustomerService.class);
 	static Scanner scanner;
 
 	public OrderApp() {
-		oserv = new OrderServiceImplementation();
-		cserv=new CustomerServiceImplementation();
 		scanner = new Scanner(System.in);
 	}
 

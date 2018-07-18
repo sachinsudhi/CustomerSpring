@@ -2,20 +2,25 @@ package trng.springcore.customer_s_core;
 
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.Scanner;
 import trng.springcore.pojo.Address;
 import trng.springcore.pojo.Customer;
 import trng.springcore.service.CustomerService;
-import trng.springcore.service.CustomerServiceImplementation;
 import trng.springcore.utils.HibernateUtils;
 
 public class CustomerApp {
-	CustomerService cserv;
+	
+	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(trng.springcore.config.AppConfig.class);
+	CustomerService cserv = applicationContext.getBean(CustomerService.class);
+	//CustomerService cserv;
 	static Scanner scanner;
 
 	public CustomerApp() {
-		cserv = new CustomerServiceImplementation();
+		//cserv = new CustomerServiceImplementation();
 		scanner = new Scanner(System.in);
 	}
 
